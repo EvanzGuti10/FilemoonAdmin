@@ -62,7 +62,7 @@ function btnCrear() {
     var imagen = iimagen.value;
     var nombre = encodeURIComponent(n);
     var codigo = '';
-    var urlc = 'https://filemoon.sx/api/folder/create?key=18056hkzovzjvogmav4qb&name=' + nombre;
+    var urlc = 'https://filemoon.sx/api/folder/create?key=18056luv7hwz0700zjd2q&name=' + nombre;
     fetch(urlc)
         .then(response => response.json())
         .then(data => {
@@ -89,7 +89,7 @@ function btnEnviar() {
 
     for (var i = 0; i < lineas.length; i++) {
         if (lineas[i][0] == 'h') {
-            var url = 'https://filemoon.sx/api/remote/add?key=18056hkzovzjvogmav4qb&fld_id=' + codigo + "&url=";
+            var url = 'https://filemoon.sx/api/remote/add?key=18056luv7hwz0700zjd2q&fld_id=' + codigo + "&url=";
             var subir = url + lineas[i];
 
             fetch(subir)
