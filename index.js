@@ -4,6 +4,7 @@ var icodigo = document.getElementById('codigo');
 var ienlaces = document.getElementById('enlaces');
 var boton = document.getElementById("btnenviar");
 const dataArray = [];
+boton.disabled = true;
 
 const urlante = 'https://docs.google.com/spreadsheets/d/e/2PACX-1vSKuuCNbkpOGNDcVetXOCcJ_I-WVUKeKqyeFNge61-xZyVeLTakn57b_sGtQESpX5RjTpcJtw0bTtC1/pubhtml?gid=0&single=true';
 //const urlfile = 'https://docs.google.com/spreadsheets/d/e/2PACX-1vQcHf31D-1ci81iVfKNpa_Bu-DxgA0I6FsL1QZswGwJXYmyjM0uQRkJHchb7R2JwedjAlBO_sHR-nfF/pubhtml?gid=0&single=true';
@@ -117,8 +118,4 @@ function btnEnviar() {
         }
     }
 
-}
-
-function btnRenombrar() {
-    
 }
