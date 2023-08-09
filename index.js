@@ -41,8 +41,8 @@ function btnLimpiar() {
 }
 
 function btnActualizar() {
-    //fetch(urlfile)
-    fetch(urlwish)
+    fetch(urlfile)
+    //fetch(urlwish)
         .then(response => response.text())
         .then(data => {
             const parser = new DOMParser();
