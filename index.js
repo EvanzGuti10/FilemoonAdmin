@@ -4,11 +4,10 @@ var icodigo = document.getElementById('codigo');
 var ienlaces = document.getElementById('enlaces');
 var boton = document.getElementById("btnenviar");
 const dataArray = [];
-boton.disabled = true;
 
 const urlante = 'https://docs.google.com/spreadsheets/d/e/2PACX-1vSKuuCNbkpOGNDcVetXOCcJ_I-WVUKeKqyeFNge61-xZyVeLTakn57b_sGtQESpX5RjTpcJtw0bTtC1/pubhtml?gid=0&single=true';
-//const urlfile = 'https://docs.google.com/spreadsheets/d/e/2PACX-1vQcHf31D-1ci81iVfKNpa_Bu-DxgA0I6FsL1QZswGwJXYmyjM0uQRkJHchb7R2JwedjAlBO_sHR-nfF/pubhtml?gid=0&single=true';
-const urlwish = 'https://docs.google.com/spreadsheets/d/e/2PACX-1vRKxE5fsOIBX0XEq-Fd-noZL9O6KTSb4hwT_TuaoTM-3DpKXe2W1owqPa0ph30wfyCLEBjcDWF_3Csj/pubhtml?gid=0&single=true';
+const urlfile = 'https://docs.google.com/spreadsheets/d/e/2PACX-1vQcHf31D-1ci81iVfKNpa_Bu-DxgA0I6FsL1QZswGwJXYmyjM0uQRkJHchb7R2JwedjAlBO_sHR-nfF/pubhtml?gid=0&single=true';
+//const urlwish = 'https://docs.google.com/spreadsheets/d/e/2PACX-1vRKxE5fsOIBX0XEq-Fd-noZL9O6KTSb4hwT_TuaoTM-3DpKXe2W1owqPa0ph30wfyCLEBjcDWF_3Csj/pubhtml?gid=0&single=true';
 
 fetch(urlante)
     .then(response => response.text())
@@ -33,16 +32,6 @@ fetch(urlante)
     .catch(error => {
         console.log('Error al obtener los datos:', error);
     });
-
-icodigo.addEventListener("input", verificar);
-
-function verificar() {
-    if (icodigo.value === "") {
-        boton.disabled = true;
-    } else {
-        boton.disabled = false;
-    }
-}
 
 function btnLimpiar() {
     inombre.value = '';
@@ -76,8 +65,8 @@ function btnCrear() {
     var imagen = iimagen.value;
     var nombre = encodeURIComponent(n);
     var codigo = '';
-    //var urlc = 'https://filemoon.sx/api/folder/create?key=18056luv7hwz0700zjd2q&name=' + nombre;
-    var urlc = 'https://api.streamwish.com/api/folder/create?key=3609fo97wn3tj97h60t5&name=' + nombre;
+    var urlc = 'https://filemoon.sx/api/folder/create?key=18056wl0orm5wvkqsxdkw&name=' + nombre;
+    //var urlc = 'https://api.streamwish.com/api/folder/create?key=3609fo97wn3tj97h60t5&name=' + nombre;
     fetch(urlc)
         .then(response => response.json())
         .then(data => {
@@ -104,8 +93,8 @@ function btnEnviar() {
 
     for (var i = 0; i < lineas.length; i++) {
         if (lineas[i][0] == 'h') {
-            //var url = 'https://filemoon.sx/api/remote/add?key=18056wl0orm5wvkqsxdkw&fld_id=' + codigo + "&url=";
-            var url = 'https://api.streamwish.com/api/upload/url?key=3609fo97wn3tj97h60t5&fld_id=' + codigo + "&url=";
+            var url = 'https://filemoon.sx/api/remote/add?key=18056wl0orm5wvkqsxdkw&fld_id=' + codigo + "&url=";
+            //var url = 'https://api.streamwish.com/api/upload/url?key=3609fo97wn3tj97h60t5&fld_id=' + codigo + "&url=";
             var subir = url + lineas[i];
 
             fetch(subir)
