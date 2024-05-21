@@ -66,7 +66,7 @@ function btnCrear() {
     var imagen = iimagen.value;
     var nombre = encodeURIComponent(n);
     var codigo = '';
-    var urlc = 'https://vidhideapi.com/api/folder/create?key=27009kzvccksytstlupyy&name=' + nombre;
+    var urlc = 'https://filemoonapi.com/api/folder/create?key=54340gjpnv8a0abxcv6s4&name=' + nombre;
     //var urlc = 'https://api.streamwish.com/api/folder/create?key=3609fo97wn3tj97h60t5&name=' + nombre;
     fetch(urlc)
         .then(response => response.json())
@@ -94,7 +94,7 @@ function btnEnviar() {
 
     for (var i = 0; i < lineas.length; i++) {
         if (lineas[i][0] == 'h') {
-            var url = 'https://vidhideapi.com/api/upload/url?key=27009kzvccksytstlupyy&fld_id=' + codigo + "&url=";
+            var url = 'https://filemoonapi.com/api/remote/add?key=54340gjpnv8a0abxcv6s4&fld_id=' + codigo + "&url=";
             //var url = 'https://api.streamwish.com/api/upload/url?key=3609fo97wn3tj97h60t5&fld_id=' + codigo + "&url=";
             var subir = url + lineas[i];
 
