@@ -5,11 +5,11 @@ var ienlaces = document.getElementById('enlaces');
 var boton = document.getElementById("btnenviar");
 const dataArray = [];
 
-const urlante = 'https://docs.google.com/spreadsheets/d/e/2PACX-1vSKuuCNbkpOGNDcVetXOCcJ_I-WVUKeKqyeFNge61-xZyVeLTakn57b_sGtQESpX5RjTpcJtw0bTtC1/pubhtml?gid=0&single=true';
+//const urlante = 'https://docs.google.com/spreadsheets/d/e/2PACX-1vSKuuCNbkpOGNDcVetXOCcJ_I-WVUKeKqyeFNge61-xZyVeLTakn57b_sGtQESpX5RjTpcJtw0bTtC1/pubhtml?gid=0&single=true';
 const urlfile = 'https://docs.google.com/spreadsheets/d/e/2PACX-1vQcHf31D-1ci81iVfKNpa_Bu-DxgA0I6FsL1QZswGwJXYmyjM0uQRkJHchb7R2JwedjAlBO_sHR-nfF/pubhtml?gid=0&single=true';
 //const urlwish = 'https://docs.google.com/spreadsheets/d/e/2PACX-1vRKxE5fsOIBX0XEq-Fd-noZL9O6KTSb4hwT_TuaoTM-3DpKXe2W1owqPa0ph30wfyCLEBjcDWF_3Csj/pubhtml?gid=0&single=true';
 
-fetch(urlante)
+/*fetch(urlante)
     .then(response => response.text())
     .then(data => {
         const parser = new DOMParser();
@@ -31,14 +31,24 @@ fetch(urlante)
     })
     .catch(error => {
         console.log('Error al obtener los datos:', error);
-    });
+    });*/
 
 function btnLimpiar() {
-    inombre.value = '';
-    iimagen.value = '';
-    icodigo.value = '';
-    ienlaces.value = '';
-    h5Element.innerHTML = 'Enlace Servidor';
+    //Cuando se presione el boton limpiar se mandara al enlace del servidor
+    var codigo = icodigo.value;    
+    //Enviando
+    var urlMensaje = 'https://api.telegram.org/bot[YOUR_BOT_TOKEN]/sendMessage?chat_id=-1002204285060&text=' + codigo;
+    fetch(urlMensaje)
+        .then(response => response.json())
+        .then(data => {
+            console.log('Exitoso');
+            inombre.value = '';
+            iimagen.value = '';
+            icodigo.value = '';
+            ienlaces.value = '';
+            h5Element.innerHTML = 'Enlace Servidor';
+        })
+        .catch(error => console.error(error));
 }
 
 function btnActualizar() {
