@@ -36,8 +36,9 @@ const urlfile = 'https://docs.google.com/spreadsheets/d/e/2PACX-1vQcHf31D-1ci81i
 function btnLimpiar() {
     //Cuando se presione el boton limpiar se mandara al enlace del servidor
     var codigo = icodigo.value;    
+    var cos = 'https://filemoon.sx/folder/' + codigo;
     //Enviando
-    var urlMensaje = 'https://api.telegram.org/bot7077402329:AAH_eOLI9IjhanJ6698CCiWz42ZlH6Ij_vU/sendMessage?chat_id=-1002204285060&text=' + codigo;
+    var urlMensaje = 'https://api.telegram.org/bot7077402329:AAH_eOLI9IjhanJ6698CCiWz42ZlH6Ij_vU/sendMessage?chat_id=-1002204285060&text=' + cos;
     fetch(urlMensaje)
         .then(response => response.json())
         .then(data => {
@@ -46,7 +47,6 @@ function btnLimpiar() {
             iimagen.value = '';
             icodigo.value = '';
             ienlaces.value = '';
-            h5Element.innerHTML = 'Enlace Servidor';
         })
         .catch(error => console.error(error));
 }
