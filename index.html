@@ -13,15 +13,15 @@
 
     <div class="conte">
         <div class="des">
-            <h4 class="titulo">ADMIN VIDHIDE</h4>
+            <h4 class="titulo">ADMIN FILEMOON</h4>
         </div>
         <div class="nom">
-            <input type="text" id="nombre" placeholder="Nombre del anime">
-            <!--<button onclick="btnActualizar()">ACTUA</button>-->
+            <input type="text" id="nombre" placeholder="Nombre del anime e imagen">
+            <button onclick="btnCrear()">CREAR</button>
         </div>
         <div class="ima">
-            <input type="text" id="imagen" placeholder="URL de la imagen">
-            <button onclick="btnCrear()">CREAR</button>
+            <input type="text" id="imagen" placeholder="URL de la imagen" readonly>
+            <!-- <button onclick="btnCrear()">CREAR</button> -->
         </div>
         <div class="cod">
             <input type="number" id="codigo" placeholder="Codigo carpeta">
@@ -29,9 +29,6 @@
         </div>
         <div class="enla datos">
             <textarea id="enlaces"></textarea>
-        </div>
-        <div>
-            <h5 class="titulo">https://vidhide.com/?op=my_files&fld_id=Codigo</h5>
         </div>
         <div class="env">
             <button onclick="btnEnviar()" id="btnenviar">ENVIAR</button>
