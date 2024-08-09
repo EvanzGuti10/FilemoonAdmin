@@ -53,7 +53,21 @@ function btnCrear() {
             fetch(urle + 'nombre=' + nombre + '&imagen=' + urlImagen + '&codigo=' + codigo)
                 .then(response => response.json())
                 .then(data => {
-                    console.log('Exitoso');
+                    //Para el otro canal
+                    var urlMensaje = 'https://api.telegram.org/bot7077402329:AAH_eOLI9IjhanJ6698CCiWz42ZlH6Ij_vU/sendMessage?chat_id=-1001853757541&text=' + nombre;
+                    fetch(urlMensaje)
+                        .then(response => response.json())
+                        .then(data => {
+                            //Para el otro canal
+                            var urlMensajeCodigo = 'https://api.telegram.org/bot7077402329:AAH_eOLI9IjhanJ6698CCiWz42ZlH6Ij_vU/sendMessage?chat_id=-1001853757541&text=' + codigo;
+                            fetch(urlMensajeCodigo)
+                                .then(response => response.json())
+                                .then(data => {
+                                    console.log('Exitoso');
+                                })
+                                .catch(error => console.error(error));
+                        })
+                        .catch(error => console.error(error));
                 })
                 .catch(error => console.error(error));
         })
