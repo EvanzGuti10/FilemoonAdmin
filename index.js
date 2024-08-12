@@ -14,15 +14,15 @@ function btnLimpiar() {
     //Enviando
     var urlMensaje = 'https://api.telegram.org/bot7077402329:AAH_eOLI9IjhanJ6698CCiWz42ZlH6Ij_vU/sendMessage?chat_id=-1002204285060&text=' + cos;
     fetch(urlMensaje)
-        .then(response => response.json())
-        .then(data => {
-            console.log('Exitoso');
-            inombre.value = '';
-            iimagen.value = '';
-            icodigo.value = '';
-            ienlaces.value = '';
-        })
-        .catch(error => console.error(error));
+    .then(response => response.json())
+    .then(data => {
+        console.log('Exitoso');
+        inombre.value = '';
+        iimagen.value = '';
+        icodigo.value = '';
+        ienlaces.value = '';
+    })
+    .catch(error => console.error(error));
 }
 
 function btnCrear() {
@@ -43,35 +43,35 @@ function btnCrear() {
     var imagenSubir = imagen.value;
 
     fetch(urlc)
-        .then(response => response.json())
-        .then(data => {
-            codigo = data.result.fld_id;
-            icodigo.value = '' + codigo;
+    .then(response => response.json())
+    .then(data => {
+        codigo = data.result.fld_id;
+        icodigo.value = '' + codigo;
 
-            var urle = 'https://script.google.com/macros/s/AKfycbweUyIoRlZXsrDL95366BoYbPMmkozy0n6sglQf8lhGI2zIL4Wug3qIHb3Cctu6nSvW/exec?';
+        var urle = 'https://script.google.com/macros/s/AKfycbweUyIoRlZXsrDL95366BoYbPMmkozy0n6sglQf8lhGI2zIL4Wug3qIHb3Cctu6nSvW/exec?';
 
-            fetch(urle + 'nombre=' + nombre + '&imagen=' + urlImagen + '&codigo=' + codigo)
+        fetch(urle + 'nombre=' + nombre + '&imagen=' + urlImagen + '&codigo=' + codigo)
+        .then(response => {
+            console.log('Exitoso');
+            //Para el otro canal
+            var urlMensaje = 'https://api.telegram.org/bot7077402329:AAH_eOLI9IjhanJ6698CCiWz42ZlH6Ij_vU/sendMessage?chat_id=-1001853757541&text=' + nombre;
+            fetch(urlMensaje)
+            .then(response => response.json())
+            .then(data => {
+                            //Para el otro canal
+                var urlMensajeCodigo = 'https://api.telegram.org/bot7077402329:AAH_eOLI9IjhanJ6698CCiWz42ZlH6Ij_vU/sendMessage?chat_id=-1001853757541&text=' + codigo;
+                fetch(urlMensajeCodigo)
                 .then(response => response.json())
                 .then(data => {
-                    //Para el otro canal
-                    var urlMensaje = 'https://api.telegram.org/bot7077402329:AAH_eOLI9IjhanJ6698CCiWz42ZlH6Ij_vU/sendMessage?chat_id=-1001853757541&text=' + nombre;
-                    fetch(urlMensaje)
-                        .then(response => response.json())
-                        .then(data => {
-                            //Para el otro canal
-                            var urlMensajeCodigo = 'https://api.telegram.org/bot7077402329:AAH_eOLI9IjhanJ6698CCiWz42ZlH6Ij_vU/sendMessage?chat_id=-1001853757541&text=' + codigo;
-                            fetch(urlMensajeCodigo)
-                                .then(response => response.json())
-                                .then(data => {
-                                    console.log('Exitoso');
-                                })
-                                .catch(error => console.error(error));
-                        })
-                        .catch(error => console.error(error));
+                    console.log('Exitoso');
                 })
                 .catch(error => console.error(error));
+            })
+            .catch(error => console.error(error));       
         })
         .catch(error => console.error(error));
+    })
+    .catch(error => console.error(error));
 }
 
 function btnEnviar() {
@@ -86,12 +86,12 @@ function btnEnviar() {
             var subir = url + lineas[i];
 
             fetch(subir)
-                .then(response => response.json())
-                .then(data => {
-                    console.log('Exitoso');
-                    ienlaces.value = '';
-                })
-                .catch(error => console.error(error));
+            .then(response => response.json())
+            .then(data => {
+                console.log('Exitoso');
+                ienlaces.value = '';
+            })
+            .catch(error => console.error(error));
         }
     }
 
