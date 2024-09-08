@@ -48,7 +48,7 @@ function btnCrear() {
         codigo = data.result.fld_id;
         icodigo.value = '' + codigo;
 
-        var urle = 'https://script.google.com/macros/s/AKfycbweUyIoRlZXsrDL95366BoYbPMmkozy0n6sglQf8lhGI2zIL4Wug3qIHb3Cctu6nSvW/exec?';
+        var urle = 'https://script.google.com/macros/s/AKfycbxnye-7lFjktp0r05ug51CNhlDvDFplNQIJkTvQFS1hHmi0Mu1sY8qFJSjEhfAflrI/exec?';
 
         fetch(urle + 'nombre=' + nombre + '&imagen=' + urlImagen + '&codigo=' + codigo)
         .then(response => {
